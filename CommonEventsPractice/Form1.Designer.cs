@@ -54,12 +54,14 @@
             // eventLabel
             // 
             this.eventLabel.AutoSize = true;
+            this.eventLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.eventLabel.ForeColor = System.Drawing.Color.IndianRed;
             this.eventLabel.Location = new System.Drawing.Point(22, 36);
             this.eventLabel.Name = "eventLabel";
-            this.eventLabel.Size = new System.Drawing.Size(112, 17);
+            this.eventLabel.Size = new System.Drawing.Size(114, 19);
             this.eventLabel.TabIndex = 1;
             this.eventLabel.Text = "Double Click Me!";
+            this.eventLabel.DoubleClick += new System.EventHandler(this.eventLabel_DoubleClick);
             // 
             // eventNumericUpDown
             // 
@@ -67,6 +69,7 @@
             this.eventNumericUpDown.Name = "eventNumericUpDown";
             this.eventNumericUpDown.Size = new System.Drawing.Size(173, 22);
             this.eventNumericUpDown.TabIndex = 2;
+            this.eventNumericUpDown.ValueChanged += new System.EventHandler(this.eventNumericUpDown_ValueChanged);
             // 
             // eventListBox
             // 
@@ -80,13 +83,17 @@
             this.eventListBox.Name = "eventListBox";
             this.eventListBox.Size = new System.Drawing.Size(173, 68);
             this.eventListBox.TabIndex = 3;
+            this.eventListBox.SelectedIndexChanged += new System.EventHandler(this.eventListBox_SelectedIndexChanged);
             // 
             // eventTestBox
             // 
             this.eventTestBox.Location = new System.Drawing.Point(25, 253);
             this.eventTestBox.Name = "eventTestBox";
             this.eventTestBox.Size = new System.Drawing.Size(210, 22);
-            this.eventTestBox.TabIndex = 4;
+            this.eventTestBox.TabIndex = 1;
+            this.eventTestBox.Enter += new System.EventHandler(this.eventTestBox_Enter);
+            this.eventTestBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.eventTestBox_KeyPress);
+            this.eventTestBox.Leave += new System.EventHandler(this.eventTestBox_Leave);
             // 
             // eventPictureBox
             // 
@@ -97,6 +104,8 @@
             this.eventPictureBox.Size = new System.Drawing.Size(248, 233);
             this.eventPictureBox.TabIndex = 5;
             this.eventPictureBox.TabStop = false;
+            this.eventPictureBox.MouseEnter += new System.EventHandler(this.eventPictureBox_MouseEnter);
+            this.eventPictureBox.MouseLeave += new System.EventHandler(this.eventPictureBox_MouseLeave);
             // 
             // mainForm
             // 
@@ -111,6 +120,8 @@
             this.Controls.Add(this.messagesTextBox);
             this.Name = "mainForm";
             this.Text = "Windows Forms Components - Common Events";
+            this.Load += new System.EventHandler(this.mainForm_Load);
+            this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.mainForm_MouseClick);
             ((System.ComponentModel.ISupportInitialize)(this.eventNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.eventPictureBox)).EndInit();
             this.ResumeLayout(false);
